@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link} from 'react-router-dom';
-// import './index.css';
+import './index.css';
 
 
 class Remove extends Component {
@@ -10,22 +10,8 @@ class Remove extends Component {
         super(props);
 
         this.state = {
-            position:"",
-            contacts: []
+            position:""
         }
-    }
-
-
-
-
-    componentDidMount(){
-
-        window.fetch("http://plato.mrl.ai:8080/contacts",
-        {headers: {API: "porras"}})
-        .then((res) => res.json())
-        .then((data) => {
-            this.setState({contacts: data.contacts});
-        });
     }
 
 
@@ -33,12 +19,8 @@ class Remove extends Component {
         
             const url = "http://plato.mrl.ai:8080/contacts/remove";
             const data = this.state;
-            const number = data.position - 1;
 
-            console.log("FIRST DATA: ", data.position)
-
-            // this.componentDidMount();
-            // console.log(this.state.contacts)
+            console.log("FIRST DATA: ", data)
 
             fetch(url, {
                 method: "POST",
@@ -47,12 +29,12 @@ class Remove extends Component {
                     "Content-Type":"application/json",
                     "Accept":"application/json"
                 },
-                body:JSON.stringify(number)
+                body:JSON.stringify(data)
             }).then((result)=>{
                 console.log("DATA", result)
                 result.json().then((resp)=>{
                     console.warn("resp", resp);
-                    console.log("DATA", result);
+                    alert("Contact removed successfully");
                 })
             })
         
@@ -64,13 +46,15 @@ class Remove extends Component {
         return(
 
             <div>
-                <h1>Remove a Contact</h1>
-
+                <h1 className="title">Remove a Contact</h1>
+                <Link className="profile-nav-link"to='/contacts'>Go Back</Link>
                     {
                     <div>
-                        <input type="text" value={this.state.position} name="position"
-                        onChange={(data)=>{this.setState({position: data.target.value})}}/><br></br>
-                        <button onClick={()=>{this.removeContact()}}>Submit</button>
+                        <div className="form">
+                            <input className="form-content" type="text" placeholder="position number" value={this.state.position} name="position"
+                            onChange={(data)=>{this.setState({position: data.target.value})}}/><br></br>
+                            <button className="form-submit" onClick={()=>{this.removeContact()}}>Submit</button>
+                        </div>
                      </div>
                     }
             </div>

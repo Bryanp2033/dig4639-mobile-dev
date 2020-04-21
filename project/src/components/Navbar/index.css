@@ -1,0 +1,23 @@
+/* navbar */
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background: rgb(73, 79, 82);
+}
+
+/* navbar links */
+.nav-link{
+    width: 50%;
+    font-size: 20px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+.nav-link:hover{
+    text-decoration: underline;
+}

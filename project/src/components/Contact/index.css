@@ -1,0 +1,38 @@
+.contacts-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    /* background: rgb(73, 79, 82); */
+    width: 95%;
+}
+
+
+/* navbar links */
+.contacts-nav-link{
+    font-size: 20px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: black
+}
+
+.contacts-nav-link:hover{
+    text-decoration: underline;
+    color: rgb(143, 142, 142);
+}
+
+.title{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-list{
+    padding-top: 15px;
+    font-size: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

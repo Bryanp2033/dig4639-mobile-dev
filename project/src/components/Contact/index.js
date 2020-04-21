@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link} from 'react-router-dom';
-// import './index.css';
+import './index.css';
 
 
 class Contact extends Component {
@@ -26,14 +26,17 @@ class Contact extends Component {
         return(
 
             <div>
-                <h1>Contacts Page</h1>
-                <Link to='/contacts/add'>Add New Contact</Link>
-                <Link to='/contacts/remove'>Remove a Contact</Link>
-                <Link to='/profile'>My Profile</Link>
+                <h1 className="title">Contacts Page</h1>
+
+                    <div className="contacts-nav">
+                    <Link to='/contacts/add' className="contacts-nav-link">Add New Contact</Link>
+                    <Link to='/contacts/remove' className="contacts-nav-link">Remove a Contact</Link>
+                    <Link to='/profile' className="contacts-nav-link">My Profile</Link>
+                    </div>
                     {
                         this.state.contacts.map((value, index) => {
                             return (
-                            <div>
+                            <div className="contact-list">
                                 <p key={index}>Name: {value.name}, Number: {value.number}</p>
                             </div>
                             )

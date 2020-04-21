@@ -1,0 +1,28 @@
+.title{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form{
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form-content{
+    width: 300px;
+    height: 20px;
+    font-size: 16px;
+}
+
+.form-submit{
+    font-size: 20px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(6, 212, 6);
+}
+
+.form-submit:hover{
+    background-color: rgb(3, 167, 3);
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link} from 'react-router-dom';
-// import './index.css';
+import './index.css';
 
 
 class Add extends Component {
@@ -28,32 +28,25 @@ class Add extends Component {
         }).then((result)=>{
             result.json().then((resp)=>{
                 console.warn("resp", resp);
-                console.log(data);
+                alert("Contact added successfully");
             })
         })
     }
-
-    // componentDidMount(){
-
-    //     window.fetch("http://plato.mrl.ai:8080/contacts",
-    //     {headers: {API: "porras"}})
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //         this.setState({contacts: data.contacts});
-    //     });
-    // }
 
 
     render(){
         return(
 
             <div>
-                <h1>Add a new Contact</h1>
-                <input type="text" value={this.state.name} name="name"
-                 onChange={(data)=>{this.setState({name: data.target.value})}}/><br></br>
-                <input type="text" value={this.state.number} name="number"
-                 onChange={(data)=>{this.setState({number: data.target.value})}}/><br></br>
-                <button onClick={()=>{this.addContact()}}>Submit</button>
+                <h1 className="title">Add a new Contact</h1>
+                <Link className="profile-nav-link"to='/contacts'>Go Back</Link>
+                <div className="form">
+                    <input  className="form-content" placeholder="Name" type="text" value={this.state.name} name="name"
+                    onChange={(data)=>{this.setState({name: data.target.value})}}/><br></br>
+                    <input className="form-content" placeholder="Number" type="text" value={this.state.number} name="number"
+                    onChange={(data)=>{this.setState({number: data.target.value})}}/><br></br>
+                    <button className="form-submit" onClick={()=>{this.addContact()}}>Submit</button>
+                </div>
             </div>
         )
     }

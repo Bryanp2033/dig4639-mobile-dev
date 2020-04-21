@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link} from 'react-router-dom';
-// import './index.css';
+import './index.css';
 
 
 class Profile extends Component {
@@ -29,10 +29,10 @@ class Profile extends Component {
         return(
 
             <div>
-                <h1>Profile Page</h1>
-                <Link to='/contacts'>Go Back</Link>
-                <h2>Name: {this.state.profile.name}</h2>
-                <h3>Count: {this.state.profile.count} </h3>
+                <h1 className="title">Profile Page</h1>
+                <Link className="profile-nav-link"to='/contacts'>Go Back</Link>
+                <h2 className="title">Name: {this.state.profile.name}</h2>
+                <h3 className="title">Count: {this.state.profile.count} </h3>
             </div>
         )
     }
